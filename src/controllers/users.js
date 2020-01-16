@@ -4,7 +4,7 @@ class UsersController {
 
   async get() {
     try {
-      //consulta usuário no banco de dados
+      // consulta usuário no banco de dados
       return 'usuario';
     } catch (err) {
       throw new Error(err);
@@ -13,7 +13,7 @@ class UsersController {
 
   async getById(id) {
     try {
-       //consulta usuário no banco de dados
+      // consulta usuário no banco de dados
       return 'usuario';
     } catch (err) {
       throw new Error(err);
