@@ -3,6 +3,7 @@ const usuariosRoute = require('./users');
 const empresasRoute = require('./empresas');
 const userGerstoresRoute = require('./userGestores');
 const userFuncionarioRoute = require('./userFuncionario');
+const proprietaroVeiculos = require('./proprietarioVeiculos');
 
 const router = express.Router();
 
@@ -10,6 +11,7 @@ router.use('/users', usuariosRoute);
 router.use('/empresas', empresasRoute);
 router.use('/user-gestores', userGerstoresRoute);
 router.use('/user-funcionario', userFuncionarioRoute);
+router.use('/proprietario-veiculos', proprietaroVeiculos);
 
 router.get('/', (req, res) => res.send('App Online!'));
 
