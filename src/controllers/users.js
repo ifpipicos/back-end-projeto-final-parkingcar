@@ -1,48 +1,57 @@
-class UsersController {
-  constructor() {
+class UserControllers {
+  constructor(User) {
+    this.User = User;
   }
 
-  async get() {
+  async get(req, res) {
     try {
-      // consulta usuário no banco de dados
-      return 'usuario';
+      const user = await this.User.find({});
+      res.send(user);
     } catch (err) {
-      throw new Error(err);
+      res.status(400).send(err.message);
     }
   }
 
-  async getById(id) {
+  async getById(req, res) {
+    const {
+      params: { id },
+    } = req;
+
     try {
-      // consulta usuário no banco de dados
-      return 'usuario';
+      const user = await this.User.find({ _id: id });
+      res.send(user);
     } catch (err) {
-      throw new Error(err);
+      res.status(400).send(err.message);
     }
   }
 
-  async create(userDTO) {
+  async create(req, res) {
+    const user = new this.User(req.body);
     try {
-      // salva userDTO no banco de dados
+      await user.save();
+      res.status(201).send(user);
     } catch (err) {
-      throw new Error(err);
+      res.status(422).send(err.message);
     }
   }
 
-  async update(id, userDTO) {
+  async update(req, res) {
     try {
-      // alterar usuario com dados do userDTO no banco de dados
+      await this.User.updateOne({ _id: req.params.id }, req.body);
+      res.sendStatus(200);
     } catch (err) {
-      throw new Error(err);
+      res.status(422).send(err.message);
     }
   }
 
-  async remove(id) {
+  async remove(req, res) {
     try {
-      // remove usuario do id
+      await this.User.deleteOne({ _id: req.params.id });
+      res.sendStatus(204);
     } catch (err) {
-      throw new Error(err);
+      res.status(400).send(err.message);
     }
   }
 }
 
-module.exports = UsersController;
+module.exports = UserControllers;

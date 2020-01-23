@@ -1,0 +1,6 @@
+{
+  "auth": {
+    "key": "thisisaverysecurekey",
+    "tokenExpiresIn": "7d"
+  }
+}

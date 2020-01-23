@@ -8,12 +8,20 @@ const schema = new mongoose.Schema({
   name: { type: String, required: true },
   cpf: String,
   email: String,
+  is_crieted: {
+    type: Date,
+    default: Date.now(),
+  },
   telefone: String,
-  _id_empresa: { type: String, required: true },
+  _id_empresa: { type: String },
   username: { type: String, unique: true },
   password: {
-    type: String, required: true, min: 8, max: 50,
+    type: String,
+    required: true,
+    min: 8,
+    max: 50,
   },
+  role: { type: String, required: true },
 });
 
 schema.pre('save', function (next) {
@@ -39,6 +47,7 @@ schema.methods.comparePassword = function (candidatePassword) {
     });
   });
 };
-const UserGestor = mongoose.model('UserGestor', schema);
 
-module.exports = UserGestor;
+const User = mongoose.model('User', schema);
+
+module.exports = User;

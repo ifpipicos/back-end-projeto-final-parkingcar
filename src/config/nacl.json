@@ -1,0 +1,52 @@
+[
+  {
+    "group": "admin",
+    "permissions": [
+      {
+        "resource": "*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "gestor",
+    "permissions": [
+      {
+        "resource": "*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "funcionario",
+    "permissions": [
+      {
+        "resource": "proprietario-veiculos/*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "funcionario",
+    "permissions": [
+      {
+        "resource": "entrada-e-saida/*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  },
+  {
+    "group": "funcionario",
+    "permissions": [
+      {
+        "resource": "veiculos/*",
+        "methods": "*",
+        "action": "allow"
+      }
+    ]
+  }
+]
