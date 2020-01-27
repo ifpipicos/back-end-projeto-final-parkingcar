@@ -14,7 +14,7 @@ const schema = new mongoose.Schema({
   },
   telefone: String,
   _id_empresa: { type: String },
-  username: { type: String, unique: true },
+  username: { type: String, unique: true, required: true },
   password: {
     type: String,
     required: true,
