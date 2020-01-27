@@ -25,6 +25,21 @@ class VeiculosController {
     }
   }
 
+  async getByPlaca(req, res) {
+    const {
+      params: { placa },
+    } = req;
+
+    try {
+      const proprietarioVeiculo = await this.Veiculos.findOne({
+        placa,
+      });
+      res.send(proprietarioVeiculo);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
   async create(req, res) {
     const veiculos = new this.Veiculos(req.body);
     try {

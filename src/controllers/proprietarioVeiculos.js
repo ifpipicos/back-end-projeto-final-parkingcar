@@ -18,7 +18,9 @@ class ProprietarioVeiculo {
     } = req;
 
     try {
-      const proprietarioVeiculo = await this.ProprietarioVeiculo.find({ _id: id });
+      const proprietarioVeiculo = await this.ProprietarioVeiculo.find({
+        _id: id,
+      });
       res.send(proprietarioVeiculo);
     } catch (err) {
       res.status(400).send(err.message);
@@ -37,7 +39,10 @@ class ProprietarioVeiculo {
 
   async update(req, res) {
     try {
-      await this.ProprietarioVeiculo.updateOne({ _id: req.params.id }, req.body);
+      await this.ProprietarioVeiculo.updateOne(
+        { _id: req.params.id },
+        req.body,
+      );
       res.sendStatus(200);
     } catch (err) {
       res.status(422).send(err.message);
