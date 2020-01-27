@@ -26,22 +26,12 @@
         "resource": "proprietario-veiculos/*",
         "methods": "*",
         "action": "allow"
-      }
-    ]
-  },
-  {
-    "group": "funcionario",
-    "permissions": [
+      },
       {
         "resource": "entrada-e-saida/*",
         "methods": "*",
         "action": "allow"
-      }
-    ]
-  },
-  {
-    "group": "funcionario",
-    "permissions": [
+      },
       {
         "resource": "veiculos/*",
         "methods": "*",
