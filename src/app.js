@@ -16,9 +16,9 @@ acl.config({
 });
 
 const configureExpress = () => {
+  app.use(cors());
   app.use(authMiddleware);
   app.use(acl.authorize.unless({ path: ['/api/auth/authenticate'] }));
-  app.use(cors());
   app.use(helmet());
   app.use(helmet.xssFilter());
   app.use(helmet.noSniff());
