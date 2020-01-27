@@ -1,7 +1,7 @@
 const express = require('express');
 const usuariosRoute = require('./users');
 const empresasRoute = require('./empresas');
-const userGerstoresRoute = require('./users');
+const userGerstoresRoute = require('./userGestor');
 const proprietaroVeiculos = require('./proprietarioVeiculos');
 const veiculos = require('./veiculos');
 const entradaESaida = require('./entradaESaida');
@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.use('/users', usuariosRoute);
 router.use('/empresas', empresasRoute);
-router.use('/user', userGerstoresRoute);
+router.use('/users-gestores', userGerstoresRoute);
 router.use('/proprietario-veiculos', proprietaroVeiculos);
 router.use('/veiculos', veiculos);
 router.use('/entrada-e-saida', entradaESaida);
