@@ -54,8 +54,6 @@ class EntradaESaidaController {
 
   async remove(req, res) {
     try {
-      // eslint-disable-next-line no-console
-      console.log('Entrada:', req.body);
       await this.EntradaESaida.deleteOne({ _id: req.params.id });
       res.sendStatus(204);
     } catch (err) {
