@@ -14,7 +14,7 @@
     "test": "npm run test:unit && npm run test:integration",
     "clean": "rm -rf dist",
     "compile": "npm run clean && babel . -d dist  --ignore ./node_modules --ignore ./test",
-    "build": "npm run compile"
+    "build": "npm run start"
   },
   "author": "",
   "license": "ISC",
